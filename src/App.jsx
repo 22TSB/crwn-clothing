@@ -1,20 +1,4 @@
-import "./categories.styles.scss";
-
-const Cnt = ({ title, imageUrl }) => {
-    return (
-        <>
-            <div className="category-container">
-                <div className="background-image" style={{
-                    backgroundImage: `url(${imageUrl})`
-                }}/>
-                <div className="category-body-container">
-                    <h2>{title}</h2>
-                    <p>Shop now!</p>
-                </div>
-            </div>
-        </>
-    );
-};
+import Directory from "./components/directory/directory.component.jsx";
 
 const App = () => {
     const categories = [
@@ -47,11 +31,7 @@ const App = () => {
 
     return (
         <>
-            <div className="categories-container">
-                {categories.map(({ id, title, imageUrl }) => (
-                    <Cnt key={id} title={title} imageUrl={imageUrl}/>
-                ))}
-            </div>
+            <Directory categories={categories}/>
         </>
     );
 };
